@@ -6,4 +6,6 @@ class Cricketer < ApplicationRecord
                      uniqueness: { case_sensitive: false },            
                        format: { with: VALID_EMAIL_REGEX }
     has_secure_password
+    has_many :cricketer_courses
+    has_many :courses, through: :cricketer_courses
 end
